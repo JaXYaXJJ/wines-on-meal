@@ -1,3 +1,7 @@
+import { useState } from "react";
+import Card from "./Card";
+import "./Menu.css";
+
 function Menu() {
     const cards = [
       {

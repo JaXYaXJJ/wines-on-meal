@@ -1,0 +1,43 @@
+.input-group {
+    width: 300px;
+}
+
+input {
+    box-shadow: none !important;
+    border-color: white !important;
+}
+
+.filterBtn {
+    background-color: rgb(118, 79, 79);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border: none;
+  }
+  
+  .filterBtn:hover {
+    background-color: rgb(213, 186, 186);
+    color: rgb(118, 79, 79);
+  }
+
+  .styleBtn {
+    background-color: rgb(118, 79, 79);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border: none;
+  }
+  
+  .styleBtn:hover {
+    background-color: rgb(213, 186, 186);
+    color: rgb(118, 79, 79);
+  }
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
