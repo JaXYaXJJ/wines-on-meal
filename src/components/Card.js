@@ -1,3 +1,5 @@
+import "./Card.css";
+
 function Card(props) {
     function handleClick(wineName) {
       console.log(`You selected: ${wineName}`);
