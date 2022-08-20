@@ -6,11 +6,11 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 
-function App() {
+function App(props) {
   return (
     <>
       <Header name=" Wines On Meal" />
-      <Menu />
+      <Menu winetype={props.winetype}/>
 
       {/* <Card
           wineImg="https://images.pexels.com/photos/8473212/pexels-photo-8473212.jpeg"
