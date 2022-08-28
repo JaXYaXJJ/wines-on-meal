@@ -41,13 +41,25 @@ function Menu() {
         stars: 5,
       },
     ];
-  
+
+    const [cardsCategory, setCardsCat] = useState('All');
     const [display, setDispley] = useState('grid');
+    var wineType = "All";
+    function handleClick(setWineType) {
+      wineType = setWineType;
+      setCardsCat(wineType)
+    }
   
     return (
   
       <div className="my-5">
-  
+              <ul>
+                <li><a  href="#" onClick={() => handleClick("Red Wine")}>Red Wine</a></li>
+                <li><a  href="#" onClick={() => handleClick("White Wine")}>White Wine</a></li>
+                <li><a  href="#" onClick={() => handleClick("Rosé Wine")}>Rosé Wine</a></li>
+                <li><a  href="#" onClick={() => handleClick("Sparkling Wine")}>Sparkling Wine</a></li>
+                <li><a  href="#" onClick={() => handleClick("Dessert Wine")}>Dessert Wine</a></li>
+              </ul>
         <div className="d-flex justify-content-between mx-5">
   
           <div className="d-flex justify-content-evenly">
@@ -56,11 +68,11 @@ function Menu() {
               <input type="text" className="form-control rounded-start" aria-label="Text input with dropdown button" placeholder="Category" />
               <button className="filterBtn rounded-end" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-caret-down"></i></button>
               <ul className="dropdown-menu dropdown-menu-end">
-                <li><a className="dropdown-item" href="#">Red Wine</a></li>
-                <li><a className="dropdown-item" href="#">White Wine</a></li>
-                <li><a className="dropdown-item" href="#">Rosé Wine</a></li>
-                <li><a className="dropdown-item" href="#">Sparkling Wine</a></li>
-                <li><a className="dropdown-item" href="#">Dessert Wine</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => handleClick("Red Wine")}>Red Wine</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => handleClick("White Wine")}>White Wine</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => handleClick("Rosé Wine")}>Rosé Wine</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => handleClick("Sparkling Wine")}>Sparkling Wine</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => handleClick("Dessert Wine")}>Dessert Wine</a></li>
               </ul>
             </div>
   
@@ -86,7 +98,9 @@ function Menu() {
   
         {/* <div className="d-flex justify-content-evenly"> */}
         <div className={display}>
-          {cards.map((card) => (
+          {cards
+          .filter((card) => card.category === cardsCategory || cardsCategory === "All")
+          .map((card) => (
             // <Card
             //   key={card.id}
             //   wineImg={card.wineImg}
