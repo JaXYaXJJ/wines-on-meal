@@ -2,15 +2,21 @@
 // import './App.css';
 
 import React from "react";
+import { Route, Routes } from 'react-router-dom';
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Pricing from "./components/Pricing";
 
 function App(props) {
   return (
     <>
-      <Header name=" Wines On Meal" />
-      <Menu winetype={props.winetype}/>
+      <Header name="Wines On Meal" />
+      
+      <Routes>
+        <Route path='/' element={<Menu winetype={props.winetype} />} />
+        <Route path='/pricing' element={<Pricing />} />
+      </Routes>
 
       {/* <Card
           wineImg="https://images.pexels.com/photos/8473212/pexels-photo-8473212.jpeg"

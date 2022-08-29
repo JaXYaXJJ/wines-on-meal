@@ -1,32 +1,40 @@
 select {
-    width: 300px;
-    box-shadow: none !important;
-    border-color: white !important;
+  width: 300px;
+  background-color: rgb(118, 79, 79);
+  color: whitesmoke;
+  border: none;
+  border-radius: 4px;
 }
 
-.filterBtn {
-    background-color: rgb(118, 79, 79);
-    color: whitesmoke;
-    padding: 5px 10px;
-    border: none;
-  }
+select:hover {
+  background-color: rgb(213, 186, 186);
+  color: rgb(118, 79, 79);
+  border: none;
+}
+
+/* .filterBtn {
+  background-color: rgb(118, 79, 79);
+  color: whitesmoke;
+  padding: 5px 10px;
+  border: none;
+}
   
   .filterBtn:hover {
-    background-color: rgb(213, 186, 186);
-    color: rgb(118, 79, 79);
-  }
+  background-color: rgb(213, 186, 186);
+  color: rgb(118, 79, 79);
+} */
 
   .styleBtn {
-    background-color: rgb(118, 79, 79);
-    color: whitesmoke;
-    padding: 5px 10px;
-    border: none;
-  }
+  background-color: rgb(118, 79, 79);
+  color: whitesmoke;
+  padding: 5px 10px;
+  border: none;
+}
   
   .styleBtn:hover {
-    background-color: rgb(213, 186, 186);
-    color: rgb(118, 79, 79);
-  }
+  background-color: rgb(213, 186, 186);
+  color: rgb(118, 79, 79);
+}
 
 .grid {
   display: flex;

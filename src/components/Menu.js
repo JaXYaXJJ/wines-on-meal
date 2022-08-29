@@ -59,13 +59,14 @@ function Menu(props) {
         <div className="d-flex justify-content-evenly">
 
       <form className="d-flex">
-      <select value={wineType} onChange={(e) => setCardsCat(e.target.value)}>
-        <option><a href="#" onClick={() => handleClick("All")}>All</a></option>
-        <option><a href="#" onClick={() => handleClick("Red Wine")}>Red Wine</a></option>
-        <option><a href="#" onClick={() => handleClick("White Wine")}>White Wine</a></option>
-        <option><a href="#" onClick={() => handleClick("Rosé Wine")}>Rosé Wine</a></option>
-        <option><a href="#" onClick={() => handleClick("Sparkling Wine")}>Sparkling Wine</a></option>
-        <option><a href="#" onClick={() => handleClick("Dessert Wine")}>Dessert Wine</a></option>
+      <select>
+        <option value="" disabled selected hidden>Category</option>
+        <option onClick={() => handleClick("All")}>All</option>
+        <option onClick={() => handleClick("Red Wine")}>Red Wine</option>
+        <option onClick={() => handleClick("White Wine")}>White Wine</option>
+        <option onClick={() => handleClick("Rosé Wine")}>Rosé Wine</option>
+        <option onClick={() => handleClick("Sparkling Wine")}>Sparkling Wine</option>
+        <option onClick={() => handleClick("Dessert Wine")}>Dessert Wine</option>
       </select>  
       </form>
 
