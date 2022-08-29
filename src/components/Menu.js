@@ -3,11 +3,6 @@ import Card from "./Card";
 import "./Menu.css";
 
 function Menu(props) {
-  var wineType = "All";
-  function handleClick(setWineType) {
-    alert(setWineType);
-    wineType = setWineType;
-  }
 
   const cards = [
     {
@@ -48,182 +43,53 @@ function Menu(props) {
     },
   ];
 
+  const [cardsCategory, setCardsCat] = useState('All');
   const [display, setDispley] = useState("grid");
+
+  var wineType = "All";
+  function handleClick(setWineType) {
+    wineType = setWineType;
+    setCardsCat(wineType)
+  }
 
   return (
     <div className="my-5">
-      <ul>
-        <li>
-          <a href="#" onClick={() => handleClick("Red Wine")}>
-            Red Wine
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => handleClick("White Wine")}>
-            White Wine
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => handleClick("Rosé Wine")}>
-            Rosé Wine
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => handleClick("Sparkling Wine")}>
-            Sparkling Wine
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => handleClick("Dessert Wine")}>
-            Dessert Wine
-          </a>
-        </li>
-      </ul>
 
       <div className="d-flex justify-content-between mx-5">
         <div className="d-flex justify-content-evenly">
-          <div className="input-group mb-3 mx-3">
-            <input
-              type="text"
-              className="form-control rounded-start"
-              aria-label="Text input with dropdown button"
-              placeholder="Category"
-            />
-            <button
-              className="filterBtn rounded-end"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="bi bi-caret-down"></i>
-            </button>
-            <ul className="dropdown-menu dropdown-menu-end">
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleClick("Red Wine")}
-                >
-                  Red Wine
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleClick("White Wine")}
-                >
-                  White Wine
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleClick("Rosé Wine")}
-                >
-                  Rosé Wine
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleClick("Sparkling Wine")}
-                >
-                  Sparkling Wine
-                </a>
-              </li>
-              <li>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleClick("Dessert Wine")}
-                >
-                  Dessert Wine
-                </a>
-              </li>
-            </ul>
-          </div>
 
-          <div className="input-group mb-3">
-            <input
-              type="text"
-              className="form-control rounded-start"
-              aria-label="Text input with dropdown button"
-              placeholder="City"
-            />
-            <button
-              className="filterBtn rounded-end"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="bi bi-caret-down"></i>
-            </button>
-            <ul className="dropdown-menu dropdown-menu-end">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Tel Aviv
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Jerusalem
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Haifa
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Herzelia
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Netanya
-                </a>
-              </li>
-            </ul>
-          </div>
+      <form className="d-flex">
+      <select value={wineType} onChange={(e) => setCardsCat(e.target.value)}>
+        <option><a href="#" onClick={() => handleClick("All")}>All</a></option>
+        <option><a href="#" onClick={() => handleClick("Red Wine")}>Red Wine</a></option>
+        <option><a href="#" onClick={() => handleClick("White Wine")}>White Wine</a></option>
+        <option><a href="#" onClick={() => handleClick("Rosé Wine")}>Rosé Wine</a></option>
+        <option><a href="#" onClick={() => handleClick("Sparkling Wine")}>Sparkling Wine</a></option>
+        <option><a href="#" onClick={() => handleClick("Dessert Wine")}>Dessert Wine</a></option>
+      </select>  
+      </form>
+
         </div>
 
         <div class="d-grid gap-2 d-md-block mx-3">
           <button
             onClick={(e) => setDispley("list")}
             class="styleBtn rounded mx-3"
-            type="button"
-          >
+            type="button">
             <i class="bi bi-text-center"></i>
           </button>
           <button
             onClick={(e) => setDispley("grid")}
             class="styleBtn rounded"
-            type="button"
-          >
+            type="button">
             <i class="bi bi-grid-3x3"></i>
           </button>
         </div>
       </div>
-
-      {/* <div className="d-flex justify-content-evenly"> */}
       <div className={display}>
-        {cards.map((card) => (
-          // <Card
-          //   key={card.id}
-          //   wineImg={card.wineImg}
-          //   imgTxtUp={card.category}
-          //   imgTxtDown={card.imgTxtDown}
-          //   name={card.name}
-          //   description={card.description}
-          //   price={card.price}
-          //   stars={card.stars}
-          // />
-
-          //if (probs.winetype == card.category || probs.winetype == "All")
+      {cards
+          .filter((card) => card.category === cardsCategory || cardsCategory === "All")
+          .map((card) => (
           <Card key={card.id} data={card} wineType={wineType} />
         ))}
       </div>

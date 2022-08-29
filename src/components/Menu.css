@@ -1,8 +1,5 @@
-.input-group {
+select {
     width: 300px;
-}
-
-input {
     box-shadow: none !important;
     border-color: white !important;
 }
