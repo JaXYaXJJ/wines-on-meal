@@ -6,7 +6,7 @@ import Orders from "./components/Orders";
 import Pricing from "./components/Pricing";
 import { useState } from "react";
 
-function App() {
+function App(props) {
   const [wineTypeApp, setWineTypeApp] = useState("All");
   const [selectStringApp, setSelectStringApp] = useState("Category");
 
@@ -21,7 +21,7 @@ function App() {
       <Header name="Wines On Meal" resetChdToPerents={wineTypeChg}/>
       
       <Routes>
-        <Route path='/' element={<Menu wineType={wineTypeApp} cngChdToPerents={wineTypeChg} selectString={selectStringApp}/>} />
+        <Route path='/' element={<Menu wineType={wineTypeApp} cngChdToPerents={wineTypeChg} selectString={selectStringApp} cardsData={props.cardsArray}/>} />
         <Route path='/pricing' element={<Pricing />} />
         <Route path='/orders' element={<Orders />} />
       </Routes>
