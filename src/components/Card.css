@@ -18,6 +18,12 @@ body {
     opacity: 0.5;
   }
   
+  @media screen and (max-width: 900px) {
+    .card {
+      width: 100%;
+    }
+  }
+
   .orderBtn {
     text-decoration: none;
     background-color: rgb(118, 79, 79);
