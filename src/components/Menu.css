@@ -12,6 +12,11 @@ select:hover {
   border: none;
 }
 
+/* option:hover { 
+  background-color: -moz-html-cellhighlight !important; 
+  color: -moz-html-cellhighlighttext !important; 
+} */
+
 /* .filterBtn {
   background-color: rgb(118, 79, 79);
   color: whitesmoke;
@@ -37,7 +42,8 @@ select:hover {
 }
 
 .grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   justify-content: space-around;
 }
 

@@ -1,0 +1,30 @@
+.orderBtn {
+    background-color: rgb(118, 79, 79);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border: none;
+  }
+    
+.orderBtn:hover {
+    background-color: rgb(213, 186, 186);
+    color: rgb(118, 79, 79);
+  }
+
+input {
+    background-color: white;
+    color: black !important;
+    border: none !important;
+}
+
+input:focus {
+    outline-color: rgb(118, 79, 79) !important;
+    outline-style: solid !important;
+    outline-width: 2px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+  

@@ -19,13 +19,10 @@ function Card(props) {
     // },
   
     const data = props.data;
-    const wineType = props.wineType;
     
-    const handling = data.category;
-    
-    if (wineType === data.category || wineType == "All") {
       return (
-        <div className="card">
+          
+          <div className="card">
           <div class="txt-container position-relative">
             <p class="position-absolute top-0 end-0 my-3">{data.category}</p>
             <p class="position-absolute bottom-0">{data.imgTxtDown}</p>
@@ -41,19 +38,13 @@ function Card(props) {
               </p>
             </div>
     
-            {/* <a href="#" className="orderBtn">
-              Order Now
-            </a> */}
-    
             <button onClick={() => handleClick(data.name)} className="orderBtn">
               Order Now
             </button>
           </div>
         </div>
+
       );
-    } else {
-      return (<div />);
     }
-  }
   
   export default Card;

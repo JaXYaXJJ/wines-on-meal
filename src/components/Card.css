@@ -8,7 +8,7 @@ body {
     border: 1px solid whitesmoke !important;
   }
   
-  .card >.txt-container>p {
+  .card > .txt-container > p {
     color: whitesmoke;
     display: flex;
     justify-content: center;
